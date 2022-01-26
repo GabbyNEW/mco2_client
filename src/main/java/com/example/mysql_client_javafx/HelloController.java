@@ -15,7 +15,13 @@ public class HelloController {
 
     @FXML
     public void onReadBtnClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("read-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Stage stage = new Stage();
+        stage.setTitle("Read Transaction");
+        stage.setScene(scene);
 
+        stage.show();
     }
 
     @FXML
@@ -23,7 +29,7 @@ public class HelloController {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("write-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Stage stage = new Stage();
-        stage.setTitle("Client Application");
+        stage.setTitle("Write Transaction");
         stage.setScene(scene);
 
         stage.show();
