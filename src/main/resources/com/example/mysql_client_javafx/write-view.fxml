@@ -13,7 +13,7 @@
       <TextField fx:id="yearInput" layoutX="16.0" layoutY="120.0" prefHeight="25.0" prefWidth="97.0" promptText="Year" />
       <TextField fx:id="rankInput" layoutX="16.0" layoutY="175.0" prefHeight="25.0" prefWidth="97.0" promptText="Rank" />
       <TextField fx:id="secondsInput" layoutX="16.0" layoutY="233.0" prefHeight="25.0" prefWidth="205.0" promptText="Seconds before commit (optional)" />
-      <Button fx:id="postBtn" layoutX="16.0" layoutY="301.0" mnemonicParsing="false" text="Send POST Request" />
+      <Button fx:id="postBtn" layoutX="16.0" layoutY="301.0" mnemonicParsing="false" text="Send POST Request" onMouseClicked="#sendPostRequest"/>
       <Text fx:id="whatsThisClick" fill="#0d00bc" layoutX="230.0" layoutY="254.0" onMouseClicked="#showSecondsInfoPrompt" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="What's this?" />
       <CheckBox fx:id="doRollbackCheck" layoutX="155.0" layoutY="305.0" mnemonicParsing="false" text="Rollback (instead of Commit) Transaction" />
    </children>
