@@ -2,6 +2,7 @@ package com.example.mysql_client_javafx;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -15,6 +16,7 @@ public class ReadController {
     public TextField idInput, titleInput, yearInput;
     public Text infoTextBtn;
     public Button getBtn, spamBtn, stopBtn;
+    public TextArea outputArea;
 
     HttpClient client;
     HttpRequest request; boolean debug = true;
@@ -26,18 +28,22 @@ public class ReadController {
         if (debug)
             request = HttpRequest.newBuilder()
                     .uri(URI.create("http://206.189.148.74:5001/")) // Replication server
-                    .header("key", "value")
+                    .header("_id", "4")
+                    .header("title", "")
+                    .header("year", "")
                     .GET()
                     .build();
         else
             request = HttpRequest.newBuilder()
                     .uri(URI.create("http://206.189.148.74:5001/")) // Replication server
-                    .header("key", "value")
+                    .header("_id", idInput.getText())
+                    .header("title", titleInput.getText())
+                    .header("year", yearInput.getText())
                     .GET()
                     .build();
         try {
             HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.statusCode());
+            outputArea.setText(response.body().toString());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
