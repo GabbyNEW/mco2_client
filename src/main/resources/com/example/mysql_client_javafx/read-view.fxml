@@ -17,7 +17,7 @@
       <TextField fx:id="idInput" layoutX="14.0" layoutY="59.0" promptText="id" />
       <TextField fx:id="titleInput" layoutX="14.0" layoutY="115.0" promptText="Title" />
       <TextField fx:id="yearInput" layoutX="14.0" layoutY="170.0" promptText="Year" />
-      <Button fx:id="getBtn" layoutX="14.0" layoutY="224.0" mnemonicParsing="false" text="Send GET Request" />
+      <Button fx:id="getBtn" layoutX="14.0" layoutY="224.0" mnemonicParsing="false" onMouseClicked="#sendGetRequest" text="Send GET Request" />
       <Button fx:id="spamBtn" layoutX="14.0" layoutY="270.0" mnemonicParsing="false" text="Spam! GET Request" />
       <Text fx:id="infoTextBtn" fill="#2700d3" layoutX="194.0" layoutY="292.0" onMouseClicked="#whatsThisInfoPromptClick" strokeType="OUTSIDE" strokeWidth="0.0" text="What's this?">
          <cursor>
