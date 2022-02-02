@@ -24,6 +24,7 @@ public class ReadController {
     Alert a = new Alert(Alert.AlertType.NONE);
 
     public void sendGetRequest() {
+        // TODO: Add chosenIsolationLevel field
         client = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).build();
         if (debug)
             request = HttpRequest.newBuilder()
