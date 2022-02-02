@@ -20,6 +20,7 @@ public class WriteController {
     HttpRequest request; boolean debug = true;
 
     public String preparePostHeader() {
+        // TODO: Add chosenIsolationLevel, isRollback fields
         if (debug)
             return new JSONObject()
                     .put("title", "TITLE HERE")
