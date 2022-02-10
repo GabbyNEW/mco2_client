@@ -28,12 +28,7 @@ public class WriteController {
 
         System.out.println(isRollback);
 
-        if(isRollback){
-            isRollbackText = "true";
-        }
-        else{
-            isRollbackText = "false";
-        }
+        isRollbackText = (isRollback) ? "true" : "false";
 
         if (debug)
             return new JSONObject()
