@@ -25,11 +25,9 @@ public class WriteController {
     public String preparePostHeader() {
         // TODO: Add chosenIsolationLevel, isRollback fields
         isRollback = doRollbackCheck.isSelected();
-
-        System.out.println(isRollback);
-
         isRollbackText = (isRollback) ? "true" : "false";
 
+        String seconds = secondsInput.getText().compareTo("") == 0 ? "0" : secondsInput.getText();
         if (debug)
             return new JSONObject()
                     .put("title", "TITLE HERE")
@@ -43,7 +41,7 @@ public class WriteController {
                 .put("title", titleInput.getText())
                 .put("year", yearInput.getText())
                 .put("rank", rankInput.getText())
-                .put("seconds", secondsInput.getText())
+                .put("seconds", seconds)
                 .put("rollback",isRollbackText)
                 .toString();
     }

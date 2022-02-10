@@ -29,6 +29,7 @@ public class DeleteController {
     @FXML
     void sendDeleteRequest(MouseEvent event) {
         client = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).build();
+        String seconds = secondsInput.getText().compareTo("") == 0 ? "0" : secondsInput.getText();
         if (debug)
             request = HttpRequest.newBuilder()
                     .uri(URI.create("http://206.189.148.74:5001/")) // Replication server
@@ -43,7 +44,7 @@ public class DeleteController {
                     .DELETE()
                     .header("_id", idInput.getText())
                     .header("title", titleInput.getText())
-                    .header("seconds", secondsInput.getText())
+                    .header("seconds", seconds)
                     .build();
 
         try {
