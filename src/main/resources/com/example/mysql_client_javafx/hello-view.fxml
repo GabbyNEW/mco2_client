@@ -6,8 +6,9 @@
 
 <AnchorPane prefHeight="280.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysql_client_javafx.HelloController">
     <children>
-        <Button fx:id="readBtn" layoutX="169.0" layoutY="94.0" mnemonicParsing="false" onAction="#onReadBtnClick" text="READ Transaction" />
-        <Button fx:id="writeBtn" layoutX="167.0" layoutY="152.0" mnemonicParsing="false" onAction="#onWriteBtnClick" text="WRITE Transaction" />
+        <Button fx:id="readBtn" layoutX="169.0" layoutY="85.0" mnemonicParsing="false" onAction="#onReadBtnClick" text="READ Transaction" />
+        <Button fx:id="writeBtn" layoutX="169.0" layoutY="128.0" mnemonicParsing="false" onAction="#onWriteBtnClick" text="WRITE Transaction" />
         <Text layoutX="190.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select mode:" />
+      <Button fx:id="deleteBtn" layoutX="169.0" layoutY="173.0" mnemonicParsing="false" onAction="#onDeleteBtnClick" text="DELETE Transaction" />
     </children>
 </AnchorPane>

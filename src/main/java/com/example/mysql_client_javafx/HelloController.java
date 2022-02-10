@@ -12,6 +12,7 @@ import java.io.IOException;
 public class HelloController {
     public Button readBtn;
     public Button writeBtn;
+    public Button deleteBtn;
 
     @FXML
     public void onReadBtnClick(ActionEvent actionEvent) throws IOException {
@@ -30,6 +31,16 @@ public class HelloController {
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Stage stage = new Stage();
         stage.setTitle("Write Transaction");
+        stage.setScene(scene);
+
+        stage.show();
+    }
+
+    public void onDeleteBtnClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("delete-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 515, 245);
+        Stage stage = new Stage();
+        stage.setTitle("Delete Transaction");
         stage.setScene(scene);
 
         stage.show();
