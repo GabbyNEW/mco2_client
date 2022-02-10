@@ -5,8 +5,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextArea?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysql_client_javafx.WriteController">
+<AnchorPane prefHeight="1000.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysql_client_javafx.WriteController">
    <children>
       <Text layoutX="228.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="Insert Movie Data" wrappingWidth="143.13671875" />
       <TextField fx:id="titleInput" layoutX="14.0" layoutY="65.0" prefHeight="25.0" prefWidth="568.0" promptText="Title" />
@@ -16,5 +17,6 @@
       <Button fx:id="postBtn" layoutX="16.0" layoutY="301.0" mnemonicParsing="false" text="Send POST Request" onMouseClicked="#sendPostRequest"/>
       <Text fx:id="whatsThisClick" fill="#0d00bc" layoutX="230.0" layoutY="254.0" onMouseClicked="#showSecondsInfoPrompt" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="What's this?" />
       <CheckBox fx:id="doRollbackCheck" layoutX="155.0" layoutY="305.0" mnemonicParsing="false" text="Rollback (instead of Commit) Transaction" />
+      <TextArea fx:id="outputArea" layoutX="14.0" layoutY="340.0" prefHeight="40.0" prefWidth="554.0" />
    </children>
 </AnchorPane>

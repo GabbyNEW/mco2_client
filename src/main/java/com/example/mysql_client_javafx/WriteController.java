@@ -13,6 +13,7 @@ public class WriteController {
     public Button postBtn;
     public Text whatsThisClick;
     public CheckBox doRollbackCheck;
+    public TextArea outputArea;
 
     Alert a = new Alert(Alert.AlertType.NONE);
 
@@ -49,7 +50,9 @@ public class WriteController {
 
         try {
             HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.statusCode());
+
+            outputArea.setText( "Status code: " + response.statusCode() + "\nResponse body: "  + response.body().toString());
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
