@@ -16,11 +16,14 @@ public class DeleteController {
     @FXML
     private CheckBox doRollbackCheck;
     @FXML
-    private TextField rankInput, secondsInput, yearInput;
+    private TextField idInput, secondsInput, yearInput;
     @FXML
     private Text whatsThisClick;
 
     Alert a = new Alert(Alert.AlertType.NONE);
+
+    HttpClient client;
+    HttpRequest request; boolean debug = true;
 
     @FXML
     void sendDeleteRequest(MouseEvent event) {
