@@ -14,6 +14,8 @@ public class WriteController {
     public Text whatsThisClick;
     public CheckBox doRollbackCheck;
     public TextArea outputArea;
+    public Boolean isRollback;
+    public String isRollbackText;
 
     Alert a = new Alert(Alert.AlertType.NONE);
 
@@ -22,12 +24,24 @@ public class WriteController {
 
     public String preparePostHeader() {
         // TODO: Add chosenIsolationLevel, isRollback fields
+        isRollback = doRollbackCheck.isSelected();
+
+        System.out.println(isRollback);
+
+        if(isRollback){
+            isRollbackText = "true";
+        }
+        else{
+            isRollbackText = "false";
+        }
+
         if (debug)
             return new JSONObject()
                     .put("title", "TITLE HERE")
                     .put("year", "1989")
                     .put("rank", "69")
                     .put("seconds", "0")
+                    .put("rollback",isRollbackText)
                     .toString();
 
         return new JSONObject()
@@ -35,6 +49,7 @@ public class WriteController {
                 .put("year", yearInput.getText())
                 .put("rank", rankInput.getText())
                 .put("seconds", secondsInput.getText())
+                .put("rollback",isRollbackText)
                 .toString();
     }
 
