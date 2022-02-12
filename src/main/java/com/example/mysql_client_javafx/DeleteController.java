@@ -30,6 +30,8 @@ public class DeleteController {
     void sendDeleteRequest(MouseEvent event) {
         client = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).build();
         String seconds = secondsInput.getText().compareTo("") == 0 ? "0" : secondsInput.getText();
+        isRollback = doRollbackCheck.isSelected();
+        isRollbackText = (isRollback) ? "true" : "false";
         if (debug)
             request = HttpRequest.newBuilder()
                     .uri(URI.create("http://206.189.148.74:5001/")) // Replication server
@@ -37,6 +39,7 @@ public class DeleteController {
                     .header("_id", "1100")
                     .header("title", titleInput.getText())
                     .header("seconds", "0")
+                    .header("rollback",isRollbackText)
                     .build();
         else
             request = HttpRequest.newBuilder()
@@ -45,6 +48,7 @@ public class DeleteController {
                     .header("_id", idInput.getText())
                     .header("title", titleInput.getText())
                     .header("seconds", seconds)
+                    .header("rollback",isRollbackText)
                     .build();
 
         try {
