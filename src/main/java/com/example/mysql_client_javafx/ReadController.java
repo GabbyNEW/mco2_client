@@ -1,5 +1,6 @@
 package com.example.mysql_client_javafx;
 
+import javafx.concurrent.Task;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -20,6 +21,8 @@ public class ReadController {
 
     HttpClient client;
     HttpRequest request; boolean debug = false;
+
+    private boolean runSpam = false;
 
     Alert a = new Alert(Alert.AlertType.NONE);
 
@@ -54,11 +57,37 @@ public class ReadController {
 
     }
 
+    public void spamGetRequest() throws InterruptedException {
+        runSpam = true;
+        spamBtn.setDisable(true);
+        stopBtn.setDisable(false);
+
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() throws InterruptedException {
+                while (runSpam) {
+                    System.out.println("Sending GET Request...");
+                    sendGetRequest();
+                    Thread.sleep(1000);
+                }
+                return null;
+            }
+        };
+
+        new Thread(task).start();
+    }
+
+    public void stopSpamRequest() {
+        runSpam = false;
+        spamBtn.setDisable(false);
+        stopBtn.setDisable(true);
+    }
+
     public void whatsThisInfoPromptClick(MouseEvent mouseEvent) {
         a = new Alert(Alert.AlertType.INFORMATION);
         a.setTitle("Information");
         a.setContentText("You may send consecutive GET requests with the same filter information. "
-        + "This is to monitor data stored on the database for the purpose of testing isolation levels.");
+        + "This is to monitor data stored on the database for the purpose of testing data consistency across multiple isolation levels.");
         a.showAndWait();
     }
 
