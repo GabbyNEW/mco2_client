@@ -42,7 +42,7 @@ public class WriteController {
                 .put("title", titleInput.getText())
                 .put("year", yearInput.getText())
                 .put("rank", rankInput.getText())
-                .put("seconds", yearInputHeader)
+                .put("seconds", seconds)
                 .put("rollback",isRollbackText)
                 .toString();
     }
