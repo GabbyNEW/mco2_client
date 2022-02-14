@@ -66,9 +66,10 @@ public class ReadController {
             @Override
             public Void call() throws InterruptedException {
                 while (runSpam) {
+                    outputArea.setText("Sending GET Request...");
                     System.out.println("Sending GET Request...");
                     sendGetRequest();
-                    Thread.sleep(1000);
+                    Thread.sleep(3000);
                 }
                 return null;
             }
