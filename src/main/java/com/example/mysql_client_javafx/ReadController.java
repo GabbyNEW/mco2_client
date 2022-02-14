@@ -19,13 +19,14 @@ public class ReadController {
     public TextArea outputArea;
 
     HttpClient client;
-    HttpRequest request; boolean debug = true;
+    HttpRequest request; boolean debug = false;
 
     Alert a = new Alert(Alert.AlertType.NONE);
 
     public void sendGetRequest() {
         // TODO: Add chosenIsolationLevel field
         client = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).build();
+        String yearInputHeader = (yearInput.getText().compareTo("") == 0) ? "-1" : yearInput.getText();
         if (debug)
             request = HttpRequest.newBuilder()
                     .uri(URI.create("http://206.189.148.74:5001/")) // Replication server
@@ -39,7 +40,7 @@ public class ReadController {
                     .uri(URI.create("http://206.189.148.74:5001/")) // Replication server
                     .header("_id", idInput.getText())
                     .header("title", titleInput.getText())
-                    .header("year", yearInput.getText())
+                    .header("year", yearInputHeader)
                     .GET()
                     .build();
         try {

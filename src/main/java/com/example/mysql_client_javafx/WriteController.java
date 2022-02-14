@@ -20,7 +20,7 @@ public class WriteController {
     Alert a = new Alert(Alert.AlertType.NONE);
 
     HttpClient client;
-    HttpRequest request; boolean debug = true;
+    HttpRequest request; boolean debug = false;
 
     public String preparePostHeader() {
         // TODO: Add chosenIsolationLevel, isRollback fields
@@ -28,6 +28,7 @@ public class WriteController {
         isRollbackText = (isRollback) ? "true" : "false";
 
         String seconds = secondsInput.getText().compareTo("") == 0 ? "0" : secondsInput.getText();
+        String yearInputHeader = (yearInput.getText().compareTo("") == 0) ? "-1" : yearInput.getText();
         if (debug)
             return new JSONObject()
                     .put("title", "TITLE HERE")
@@ -41,7 +42,7 @@ public class WriteController {
                 .put("title", titleInput.getText())
                 .put("year", yearInput.getText())
                 .put("rank", rankInput.getText())
-                .put("seconds", seconds)
+                .put("seconds", yearInputHeader)
                 .put("rollback",isRollbackText)
                 .toString();
     }

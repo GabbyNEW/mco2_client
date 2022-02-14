@@ -24,7 +24,7 @@ public class DeleteController {
     Alert a = new Alert(Alert.AlertType.NONE);
 
     HttpClient client;
-    HttpRequest request; boolean debug = true;
+    HttpRequest request; boolean debug = false;
 
     @FXML
     void sendDeleteRequest(MouseEvent event) {
