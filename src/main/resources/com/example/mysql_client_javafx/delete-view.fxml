@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="243.0" prefWidth="516.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysql_client_javafx.DeleteController">
    <children>
       <Text layoutX="195.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="Delete Movie Data" wrappingWidth="159.13671875" />
-      <TextField fx:id="titleInput" layoutX="16.0" layoutY="92.0" prefHeight="25.0" prefWidth="97.0" promptText="Title" />
+      <TextField fx:id="titleInput" layoutX="16.0" layoutY="92.0" prefHeight="25.0" prefWidth="278.0" promptText="Title" />
       <TextField fx:id="secondsInput" layoutX="16.0" layoutY="141.0" prefHeight="25.0" prefWidth="205.0" promptText="Seconds before commit (optional)" />
       <Button fx:id="deleteBtn" layoutX="16.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#sendDeleteRequest" text="Send Delete Request" />
       <Text fx:id="whatsThisClick" fill="#0d00bc" layoutX="230.0" layoutY="163.0" onMouseClicked="#showSecondsInfoPrompt" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="What's this?" />
