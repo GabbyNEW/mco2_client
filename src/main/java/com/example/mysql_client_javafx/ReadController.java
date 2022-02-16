@@ -69,7 +69,7 @@ public class ReadController {
                     outputArea.setText("Sending GET Request...");
                     System.out.println("Sending GET Request...");
                     sendGetRequest();
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 }
                 return null;
             }
